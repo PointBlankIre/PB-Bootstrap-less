@@ -1,0 +1,205 @@
+/*!
+Theme Name: PB-Bootstrap-less
+Theme URI: http://www.pointblank.ie
+Author: Point Blank
+Author URI: http://www.pointblank.ie
+Description: The PB-Bootstrap theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentytwelve
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+ 
+// Colors
+//----------------------------------------------------------
+
+  @black:                 #000;
+  @grayDarker:            #222;
+  @grayDark:              #333;
+  @gray:                  #555;
+  @grayLight:             #999;
+  @grayLighter:           #eee;
+  @white:                 #fff;
+ 
+// Scaffolding
+
+@bodyBackground:          @grayLighter;
+
+// Navbar
+
+@logodesktop:             url("https://s3.amazonaws.com/pointblankltd/uploads/bootstrap/pblogo.png" ) no-repeat; 
+
+// Footer
+
+@BgkSocialIcons:          url("https://s3.amazonaws.com/pointblankltd/uploads/bootstrap/bgk-social-icons.png") no-repeat;
+
+// Links
+
+@linkColor:             #428bca;
+@linkColorHover:        darken(@linkColor, 15%);
+
+
+@import "css/bootstrap.min.css";
+body        { padding-top: 0; background:@bodyBackground;}
+
+// Text elements
+//----------------------------------------------------------
+
+p           { margin: 0 0 1.2em;letter-spacing: 0.02em;}
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     {color: @linkColorHover;}
+a           {text-decoration: none; color:@linkColor;}
+
+
+// Images
+
+.alignleft {display: inline;float: left;margin-right: 1.625em;}
+.alignright {display: inline;float: right;margin-left: 1.625em;}
+
+
+// NavBar
+//----------------------------------------------------------
+.navbar {background-color: @white;
+      .navbar-brand { background: @logodesktop; width:173px; height:112px;padding:0;margin:5px 0 5px 0px;} 
+      .nav>.active>a, .nav>.active>a:hover, .nav>li>a:focus, .nav>li>a:hover, .nav>.active>a:focus {.bw-gradient;}
+      // Navbar button for toggling navbar items in responsive layouts
+
+      .navbar-toggle .icon-bar {display: block;width: 18px;height: 2px;background-color: @grayDarker;.border-radius(1px);.box-shadow(0 1px 0 rgba(0,0,0,.25));}
+      .navbar-toggle .icon-bar + .icon-bar {margin-top: 3px;}
+
+      }
+
+    // NavBar Dropdown 
+      .dropdown-submenu {position: relative;}
+      .dropdown:hover>.dropdown-menu {display: block;}
+      .dropdown-submenu>.dropdown-menu {top: 0;left: 100%;margin-top: -6px; margin-left: -1px; .border-radius(6px 0 6px 6px)}
+      .dropdown-submenu:hover>.dropdown-menu {display: block;}
+      .dropdown-submenu>a:after {
+          display: block;content: " ";float: right;width: 0;height: 0;border-color: transparent;border-style: solid;
+          border-width: 5px 0 5px 5px;border-left-color: #ccc;margin-top: 5px;margin-right: -10px;}
+      .dropdown-submenu:hover>a:after {border-left-color: #fff;}
+      .dropdown-submenu.pull-left {float: none;}
+      .dropdown-submenu.pull-left>.dropdown-menu {left: -100%;margin-left: 10px;.border-radius(6px 0 6px 6px);}
+
+// Lists
+//----------------------------------------------------------
+      aside.unstyled {ul {margin-left:0;list-style:none}}
+
+
+// Homepage
+//----------------------------------------------------------
+
+      .jumbotron {background: @white;}
+
+// Footer
+//----------------------------------------------------------
+        footer {
+           .icons {padding-top:10px;list-style: none;
+                  li a {padding:8px 0 12px 35px; margin-bottom:2px;}
+                  .facebook {
+                    a  {background: @BgkSocialIcons 0 -103px;
+                  &:hover  {background: @BgkSocialIcons 0 -244px;
+                    }}}
+                 .twitter {
+                    a  {background: @BgkSocialIcons 0 -67px;
+                  &:hover  {background: @BgkSocialIcons 0 -208px;
+                    }}}
+      }} // End footer
+
+
+
+
+// Media Queries
+//----------------------------------------------------------
+
+// Desktops 
+@media (min-width: 1200px) {
+
+     } // End Desktops
+
+// Tablet (landscape) 
+@media (max-width: 1024px)  {
+
+    } // end 1024
+
+// Collapsed Width
+@media (min-width: 768px) and (max-width: 979px) {
+	  body { padding-top: 40px;}
+	   /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+         .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+        .navbar {
+            .navbar-inner {padding-bottom:0;}
+            .nav { margin-right:0px; margin-top:10px; padding:0px 0 0px 15px;}
+                    }
+	} // End Collapsed width
+
+
+@media (max-width: 767px) {
+	   /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+          .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+     
+  } // end 767px
+
+	// 480px
+@media (max-width: 480px) {
+	   /* Keep menu on top on CollapseWidth */
+          .navbar-fixed-top, .navbar-fixed-bottom {position: fixed;}
+          .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {margin-left: 0px;margin-right:0px; }
+	        
+      
+  } // end 480px
+
+
+  // Mixins
+  //----------------------------------------------------------
+
+        .bw-gradient(@color: @grayLighter, @start: 200, @stop: 255) {
+          background: @color;
+          background: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0, rgb(@start,@start,@start)),
+                                       color-stop(1, rgb(@stop,@stop,@stop)));
+          background: -ms-linear-gradient(bottom,
+                                          rgb(@start,@start,@start) 0%,
+                                          rgb(@stop,@stop,@stop) 100%);
+          background: -moz-linear-gradient(center bottom,
+                                           rgb(@start,@start,@start) 0%,
+                                           rgb(@stop,@stop,@stop) 100%);
+          background: -o-linear-gradient(rgb(@stop,@stop,@stop),
+                                         rgb(@start,@start,@start));
+          filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
+        }
+
+        .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+          -webkit-border-top-right-radius: @topright;
+          -webkit-border-bottom-right-radius: @bottomright;
+          -webkit-border-bottom-left-radius: @bottomleft;
+          -webkit-border-top-left-radius: @topleft;
+          -moz-border-radius-topright: @topright;
+          -moz-border-radius-bottomright: @bottomright;
+          -moz-border-radius-bottomleft: @bottomleft;
+          -moz-border-radius-topleft: @topleft;
+          border-top-right-radius: @topright;
+          border-bottom-right-radius: @bottomright;
+          border-bottom-left-radius: @bottomleft;
+          border-top-left-radius: @topleft;
+        }
+
+        .box-shadow(@arguments) {
+          -webkit-box-shadow: @arguments;
+          -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+        }
+
+
+
