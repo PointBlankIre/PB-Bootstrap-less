@@ -2,7 +2,7 @@
 
 /// custom widget areas
 
-if ( function_exists('register_sidebar') ) 
+if ( function_exists('register_sidebar') ) {
     register_sidebar( array(
    'name' => __( 'Sidebar 1'),
    'id' => 'sidebar-1',
@@ -12,8 +12,10 @@ if ( function_exists('register_sidebar') )
    'before_title' => '<h3 class="widget-title">',
    'after_title' => '</h3>',
    ) );
+   
+}
 
-if ( function_exists('register_sidebar') )
+if ( function_exists('register_sidebar') ) {
   register_sidebar(array(
    'name' => __( 'Sidebar 2'),
    'id' => 'sidebar-2',
@@ -23,6 +25,8 @@ if ( function_exists('register_sidebar') )
    'before_title' => '<h3 class="widget-title">',
    'after_title' => '</h3>',
   ));
+  
+}
 
 /// Featured image Support
 
