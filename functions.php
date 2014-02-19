@@ -98,7 +98,7 @@ if ( function_exists('register_sidebar') ) {
 function wpbootstrap_scripts_with_jquery()
 {
 	// Register the script like this for a theme:
-	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
+	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ),'','',true  );
 	// For either a plugin or a theme, you can then enqueue the script:
 	wp_enqueue_script( 'custom-script' );
 }
@@ -271,5 +271,17 @@ global $current_user;
 /**
  * Ends Plugin
  */
+ 
+ function add_cookie_warning()
+{
+  
+  // Register the script like this for a theme:
+  wp_register_script( 'cookie-script', get_template_directory_uri() . '/js/cookiewarning.js','','',true );
+
+  // For either a plugin or a theme, you can then enqueue the script:
+  wp_enqueue_script( 'cookie-script' );
+}
+add_action( 'wp_enqueue_scripts', 'add_cookie_warning' );
+
 
 ?>
