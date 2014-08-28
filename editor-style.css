@@ -278,7 +278,7 @@ hr {
 
 a {
  
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:visited {
