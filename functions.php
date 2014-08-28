@@ -28,6 +28,13 @@ if ( function_exists('register_sidebar') ) {
   
 }
 
+// Editor Styles
+function my_theme_add_editor_styles() {
+    add_editor_style( 'editor-style.css' );
+}
+add_action( 'after_setup_theme', 'my_theme_add_editor_styles' );
+
+
 /// Featured image Support
 
     if ( function_exists( 'add_theme_support' ) ) { 
