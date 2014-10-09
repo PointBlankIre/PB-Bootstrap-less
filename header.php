@@ -33,7 +33,7 @@
 
                 </div>
                 <div class="navbar-collapse collapse">
-                  <?php wp_nav_menu( array( 'menu_class' => 'nav navbar-nav','container' => false, 'walker'  => new BootstrapNavMenuWalker()) ); ?>
+                  <?php wp_nav_menu( array('menu' => 'main',  'menu_class' => 'nav navbar-nav','container' => false, 'walker'  => new BootstrapNavMenuWalker()) ); ?>
                                               <ul class="nav navbar-nav navbar-right">
                         <li>        
                              <?php // Header text
